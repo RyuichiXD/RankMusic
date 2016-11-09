@@ -1,4 +1,4 @@
-import { song.model } from './app';
+import { Song } from './song.model';
 
 export class chart
 {
