@@ -1,6 +1,6 @@
 import { Song } from './song.model';
 
-export class chart
+export class Chart
 {
   id:number;
   chartName: string;
