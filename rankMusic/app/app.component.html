@@ -1,0 +1,34 @@
+<header id="navigation">
+    <div class="navbar navbar-inverse navbar-fixed-top" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><h1>RankYourMusic</h1></a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="scroll active"><a href="#navigation">Home</a></li>
+                    <li class="scroll"><a href="#">Add Chart</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div><!--/navbar-->
+</header> <!--/#navigation-->
+<div class="container-fluid content">
+    <div class="row parallax-chart">
+        <div class="col-md-4" *ngFor="let chart of charts" [class.selected]="chart === selectedChart" (click)="onSelect(chart)">
+            <div class="tile">
+                <div class="tiletitle">{{chart.chartName}}</div>
+                <span class="glyphicon glyphicon-{{chart.img}}"></span>
+                <div class="tileinfo">Autor: {{chart.autor}} Datum: {{chart.createDate}}</div>
+                <div class="tiledescription">Beschreibung: {{chart.description}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="row detail-section">
+        <chart-detail [chart]="selectedChart"></chart-detail>
+    </div>
+</div>

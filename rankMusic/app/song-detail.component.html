@@ -1,0 +1,11 @@
+<div *ngIf="song" class="col-md-12">
+    <div class="form-group">
+        <label> Position: </label><input class="form-control" [(ngModel)]="song.position" placeholder="name"/>
+        <label> Name: </label><input class="form-control" [(ngModel)]="song.title" placeholder="name"/>
+        <label> Interpret: </label><input class="form-control" [(ngModel)]="song.interpret" placeholder="name"/>
+        <label> Album: </label><input class="form-control" [(ngModel)]="song.album" placeholder="name"/>
+        <label> Genre: </label><input class="form-control" [(ngModel)]="song.genre" placeholder="name"/>
+        <label> Länge: </label><input class="form-control" [(ngModel)]="song.soundLength" placeholder="name"/>
+        <label> Release: </label><input class="form-control" [(ngModel)]="song.relaseDate" placeholder="name"/>
+    </div>
+</div>

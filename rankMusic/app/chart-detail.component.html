@@ -1,0 +1,22 @@
+<div *ngIf="chart" class="col-md-offset-2 col-md-8 detail-content">
+    <div class="col-md-3 sidebar">
+        <div class="form-group">
+            <span class="glyphicon glyphicon-{{chart.img}}"></span>
+            <label> Image: </label><input class="form-control" [(ngModel)]="chart.img" placeholder="name"/>
+            <label> Name: </label><input class="form-control" [(ngModel)]="chart.chartName" placeholder="name"/>
+            <label> Autor: </label><input class="form-control" [(ngModel)]="chart.autor" placeholder="name"/>
+            <label> Name: </label><input class="form-control" [(ngModel)]="chart.createDate" placeholder="name"/>
+            <label> Beschreibung: </label><input class="form-control" [(ngModel)]="chart.description" placeholder="name"/>
+        </div>
+    </div>
+    <div class="col-md-9">
+        <ul class="songs">
+            <li class="" *ngFor="let song of chart.songList; let i = index" [class.selected]="song === selectedSong" (click)="onSelect(song)">
+                <span class="position">{{song.position}}</span> {{song.title}}
+
+            </li>
+        </ul>
+
+        <song-detail [song]="selectedSong"></song-detail>
+    </div>
+</div>
